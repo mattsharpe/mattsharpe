@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>ARM QA Interview Test</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+    <style>
+        body {
+      padding-top: 60px;
+    }
+    .starter-template {
+      padding: 40px 15px;
+      text-align: center;
+    }
+    </style>
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Active Risk Manager</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">New Risk</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container">
+        <div>
+            <h1>Risk Details</h1>
+
+            <form id="form">
+                <div class="form-group" id="titleGroup">
+                    <label for="inputEmail">Title</label>
+                    <input type="text" class="form-control" id="RiskTitle" placeholder="Risk Title">
+
+                </div>
+
+                <div class="form-group" id="statusGroup">
+                    <label for="status">Status</label>
+                    <select class="form-control" id="status">
+                      <option>Open</option>
+                      <option>Closed</option>
+                      <option>Rejected</option>
+                      <option>Approved</option>
+                    </select>
+                </div>
+                
+                <div class="form-group" id="dateGroup">
+                    <label class="control-label" for="inputPassword">Approval Date</label>
+                    <input type="date" class="form-control" id="approvalDate">
+                </div>
+
+                <div class="form-group" id="ownerGroup">
+                    <label class="control-label" for="owner">Owner</label>
+                    <input type="email" class="form-control" id="owner" placeholder="risk.owner@company.com">
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+            <br />
+        </div>
+       
+        <div class="alert alert-success alert-dismissible hidden" role="alert">
+            <strong>Risk Saved!</strong>
+        </div>  
+             
+        <div class="alert alert-danger alert-dismissible hidden" role="alert">
+            <strong>Error!</strong> There were errors in your form.
+        </div>
+
+    </div><!-- /.container -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    
+    <script>
+        $(document).ready(function () {
+            $("#form").submit(function (e) {
+
+                $('.has-error').removeClass('has-error');
+                $('.alert').removeClass('hidden').addClass('hidden');
+                var valid = true;
+
+                if ($('#approvalDate').val() == "") {
+                    valid = false;
+                    $('#dateGroup').addClass("has-error");
+                }
+
+                if ($('#RiskTitle').val() == "") {
+                    valid = false;
+                    $('#titleGroup').addClass("has-error");
+                }
+
+                if (valid) {
+                    $('.alert-success').removeClass('hidden');
+                } else {
+                    $('.alert-danger').removeClass('hidden');
+                }
+
+
+            });
+        });
+    </script>
+</body>
+</html>
