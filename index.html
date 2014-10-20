@@ -82,6 +82,15 @@
     
     <script>
         $(document).ready(function () {
+
+            $('select#status').on('change', function () {
+                if (this.value == "Approved") {
+                    var today = new Date();
+                    var dateString = today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();                    
+                    $('#approvalDate').val(dateString);
+                }
+            });
+
             $("#form").submit(function (e) {
 
                 $('.has-error').removeClass('has-error');
@@ -103,8 +112,6 @@
                 } else {
                     $('.alert-danger').removeClass('hidden');
                 }
-
-
             });
         });
     </script>
