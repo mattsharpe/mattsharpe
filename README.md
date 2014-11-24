@@ -1,5 +1,6 @@
 Sword Active Risk - QA Interview Test
 ====================
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/mattsharpe/mattsharpe.github.io?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 The webpage has been developed against the specification below. Using whichever test automation tool you're most comfortable with produce some tests to demonstrate the correctness of the solution.
 
